@@ -67,8 +67,7 @@ public class UsoSwitch3 {
                 System.out.println("opción incorrecta; ninguna de las "
                         + "anteriores");
                 break;
-                
-        }
-        
+       
+        } 
     }
 }

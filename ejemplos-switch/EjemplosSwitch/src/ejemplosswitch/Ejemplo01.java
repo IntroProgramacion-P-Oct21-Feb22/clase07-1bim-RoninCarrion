@@ -2,7 +2,7 @@
 * Realizar una miniespecificación que permita seleccionar el tipo de
 * operación aritemética (+,-,*) a realizar para dos valores ingresados por teclado
 * Realizar la operación y presentar el resultado en pantalla
-*/
+ */
 package ejemplosswitch;
 
 import java.util.Locale;
@@ -13,6 +13,7 @@ import java.util.Scanner;
  * @author reroes
  */
 public class Ejemplo01 {
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
@@ -25,6 +26,7 @@ public class Ejemplo01 {
         // 5.  resultado, i[-n, n]
         int resultado;
         // 6.  Escribir "Ingrese el primer valor la operación"
+
         System.out.println("Ingrese el primer valor la operación");
         // 7.  Leer valor1
         valor1 = entrada.nextInt();
@@ -32,41 +34,58 @@ public class Ejemplo01 {
         System.out.println("Ingrese el segundo valor la operación");
         // 9.  Leer valor2
         valor2 = entrada.nextInt();
-        
-        resultado = 0;
-        
-        // 10. Escribir "Seleccione la operación que desea realizar"
-        // 11. Escribir "Ingrese 1 para sumar"
-        // 12. Escribir "Ingrese 2 para restar"
-        // 13. Escribir "Ingrese 3 para multiplicar"
-        System.out.println("Selecciones la operación que desea realizar\n"
-                + "Ingrese 1 para sumar\n"
-                + "Ingrese 2 para restar\n"
-                + "Ingrese 3 para multiplicar");
         op = entrada.nextInt();
-        
-        switch(op){
-            // Opcion 1 // si op es igual a 1; se realiza las instrucciones
-            // 17.      resultado <-- valor1 + valor2
-            // 18.   Fin
-            case 1:
-                resultado = valor1 + valor2;
-                break;
-            
-            case 2:
-                resultado = valor1 - valor2;
-                break;
-                
-            case 3:
-                resultado = valor1 * valor2;
-                break;
-                
-            default:
-                System.out.println("Operación incorrecta");
-                break;
-             
+        resultado = 0;
+            // 10. Escribir "Seleccione la operación que desea realizar"
+    // 11. Escribir "Ingrese 1 para sumar"
+    // 12. Escribir "Ingrese 2 para restar"
+    // 13. Escribir "Ingrese 3 para multiplicar"
+
+    System.out.println ("Selecciones la operación que desea realizar\n"
+                +"Ingrese 1 para sumar\n"
+                + "Ingrese 2 para restar\n"
+                + "Ingrese 3 para multiplicar\n"
+                + "Ingrese 4 para dividir");
+        if (valor1 >= 20 && valor2 >= 20) {
+            switch (op) {
+                // Opcion 1 // si op es igual a 1; se realiza las instrucciones
+                // 17.      resultado <-- valor1 + valor2
+                // 18.   Fin
+                case 1:
+                    resultado = valor1 + valor2;
+                    break;
+
+                case 2:
+                    resultado = valor1 - valor2;
+                    break;
+
+                case 3:
+                    resultado = valor1 * valor2;
+                    break;
+
+                case 4:
+                    if (valor2 == 0) {
+                        System.out.println("No es posible dividir para 0");
+                    } else {
+                        resultado = valor1 / valor2;
+                        break;
+                    }
+                default:
+
+                    System.out.println("Operación incorrecta");
+                    break;
+            }
+
+        } else {
+            System.out.println("Valor ingresado fuera del rango indicado");
         }
         // Escribir "El resultado de la operación es :" + resultado
         System.out.printf("El resultado de la operación es : %d\n", resultado);
+
     }
-}
+
+        
+        
+
+    }
+
